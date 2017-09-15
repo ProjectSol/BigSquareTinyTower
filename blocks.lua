@@ -7,7 +7,7 @@ world = love.physics.newWorld(0, 9.8^2, true)
     static.f = love.physics.newFixture(static.b, static.s)
     static.f:setUserData("Block")]]
 
-function createBlock(x,y,w,h,status)
+function createBasicBlock(x,y,w,h,status)
   local this = {}
     --local x,y,w,h,status = nil,nil,nil,nil,nil
     local defaultx,defaulty,defaultw,defaulth,defaultStatus = 400,400,5,5,"static"
@@ -46,17 +46,17 @@ function createBlock(x,y,w,h,status)
 end
 
 blocktree = {}
-function makeBlock(x,y,w,h,status)
-  local block = createBlock(x,y,w,h,status)
+function makeBasicBlock(x,y,w,h,status)
+  local block = createBasicBlock(x,y,w,h,status)
   table.insert(blocktree, block)
 end
-makeBlock(426,10,5,5,'dynamic')
-makeBlock(430,430,5,5,'static')
-makeBlock(410,450,5,5, 'static')
-makeBlock(love.graphics:getWidth()/2,love.graphics:getHeight()-5, love.graphics:getWidth(), 5)
+makeBasicBlock(426,10,5,5,'dynamic')
+makeBasicBlock(430,430,5,5,'static')
+makeBasicBlock(410,450,5,5, 'static')
+makeBasicBlock(love.graphics:getWidth()/2,love.graphics:getHeight()-2.5, love.graphics:getWidth(), 5)
 
 
 function blocks:drawBase()
-  newBlock:createBlock()
+
 
 end
